@@ -1,0 +1,3 @@
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/Tutorial.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/ALL_BUILD.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/ZERO_CHECK.dir
