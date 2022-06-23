@@ -1,0 +1,10 @@
+^P:\RESOURCES\4CODER\4CODER\PROJECTS\VULKAN_TUTORIAL\LIBS\SDL\CMAKELISTS.TXT
+setlocal
+P:\Resources\CMake\bin\cmake.exe -SP:/Resources/4Coder/4coder/projects/vulkan_tutorial -BP:/Resources/4Coder/4coder/projects/vulkan_tutorial/build --check-stamp-file P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/libs/SDL/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

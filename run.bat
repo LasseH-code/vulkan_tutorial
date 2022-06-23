@@ -1,7 +1,7 @@
 @echo off
 
-pushd build
+pushd bin
 pushd debug
-Tutorial.exe
+start cmd.exe /k "call ..\..\run_in_cmd.bat"
 popd
 popd

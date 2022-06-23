@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\bin\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Tutorial.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Tutorial</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\bin\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Tutorial.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Tutorial</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\bin\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Tutorial.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Tutorial</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\bin\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Tutorial.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Tutorial</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,11 +86,13 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -102,9 +104,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -112,13 +115,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libs\SDL\Debug\SDL2-staticd.lib;P:\Resources\VulkanSDK\1.3.216.0\Lib\vulkan-1.lib;user32.lib;gdi32.lib;winmm.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;advapi32.lib;setupapi.lib;shell32.lib;dinput8.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/Debug/Tutorial.lib</ImportLibrary>
-      <ProgramDataBaseFile>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/Debug/Tutorial.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/bin/Debug/Tutorial.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -127,9 +130,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -143,9 +148,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -153,13 +159,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libs\SDL\Release\SDL2-static.lib;P:\Resources\VulkanSDK\1.3.216.0\Lib\vulkan-1.lib;user32.lib;gdi32.lib;winmm.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;advapi32.lib;setupapi.lib;shell32.lib;dinput8.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/Release/Tutorial.lib</ImportLibrary>
-      <ProgramDataBaseFile>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/Release/Tutorial.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/bin/Release/Tutorial.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -168,9 +174,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -184,9 +192,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -194,13 +203,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libs\SDL\MinSizeRel\SDL2-static.lib;P:\Resources\VulkanSDK\1.3.216.0\Lib\vulkan-1.lib;user32.lib;gdi32.lib;winmm.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;advapi32.lib;setupapi.lib;shell32.lib;dinput8.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/MinSizeRel/Tutorial.lib</ImportLibrary>
-      <ProgramDataBaseFile>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/MinSizeRel/Tutorial.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/bin/MinSizeRel/Tutorial.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -209,10 +218,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -224,9 +235,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>P:\Resources\4Coder\4coder\projects\vulkan_tutorial\libs\SDL\include;P:\Resources\VulkanSDK\1.3.216.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -234,13 +246,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libs\SDL\RelWithDebInfo\SDL2-static.lib;P:\Resources\VulkanSDK\1.3.216.0\Lib\vulkan-1.lib;user32.lib;gdi32.lib;winmm.lib;imm32.lib;ole32.lib;oleaut32.lib;version.lib;uuid.lib;advapi32.lib;setupapi.lib;shell32.lib;dinput8.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/RelWithDebInfo/Tutorial.lib</ImportLibrary>
-      <ProgramDataBaseFile>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/RelWithDebInfo/Tutorial.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>P:/Resources/4Coder/4coder/projects/vulkan_tutorial/bin/RelWithDebInfo/Tutorial.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -260,7 +272,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule P:/Resources/4Coder/4coder/projects/vulkan_tutorial/CMakeLists.txt</Message>
@@ -273,7 +285,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule P:/Resources/4Coder/4coder/projects/vulkan_tutorial/CMakeLists.txt</Message>
@@ -286,7 +298,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule P:/Resources/4Coder/4coder/projects/vulkan_tutorial/CMakeLists.txt</Message>
@@ -299,13 +311,14 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeCXXCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeRCCompiler.cmake;P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\3.23.2\CMakeSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindPackageHandleStandardArgs.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindPackageMessage.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\FindVulkan.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;P:\Resources\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\src\main.cpp" />
+    <ClCompile Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\src\logger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\ZERO_CHECK.vcxproj">
@@ -313,6 +326,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\libs\SDL\SDL2-static.vcxproj">
+      <Project>{E42B016F-9BD9-326D-B240-71FD51AE649B}</Project>
+      <Name>SDL2-static</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

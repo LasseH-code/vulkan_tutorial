@@ -117,3 +117,240 @@ Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
 
 
 
+Determining if the include file immintrin.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_03ba7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_03ba7.dir\Debug\\" /Fd"cmTC_03ba7.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_03ba7.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_03ba7.exe
+
+
+
+Performing C SOURCE FILE Test HAVE_WIN32_CC succeeded with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_43147.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  src.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_WIN32_CC /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_43147.dir\Debug\\" /Fd"cmTC_43147.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\src.c
+  cmTC_43147.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_43147.exe
+
+
+Source file was:
+
+    #include <windows.h>
+    int main(int argc, char **argv) { return 0; }
+Determining if the include file d3d9.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_122a1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_122a1.dir\Debug\\" /Fd"cmTC_122a1.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_122a1.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_122a1.exe
+
+
+
+Determining if the include file d3d11_1.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_f343b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f343b.dir\Debug\\" /Fd"cmTC_f343b.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_f343b.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_f343b.exe
+
+
+
+Determining if the include file ddraw.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_06a4f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_06a4f.dir\Debug\\" /Fd"cmTC_06a4f.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_06a4f.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_06a4f.exe
+
+
+
+Determining if the include file dsound.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_0966c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0966c.dir\Debug\\" /Fd"cmTC_0966c.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_0966c.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_0966c.exe
+
+
+
+Determining if the include file dinput.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_9e57e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9e57e.dir\Debug\\" /Fd"cmTC_9e57e.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  cmTC_9e57e.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_9e57e.exe
+
+
+
+Determining if the include file dxgi.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_4cbf0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4cbf0.dir\Debug\\" /Fd"cmTC_4cbf0.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_4cbf0.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_4cbf0.exe
+
+
+
+Performing C SOURCE FILE Test HAVE_XINPUT_H succeeded with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_8a015.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  src.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_XINPUT_H /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8a015.dir\Debug\\" /Fd"cmTC_8a015.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\src.c
+  cmTC_8a015.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_8a015.exe
+
+
+Source file was:
+
+      #include <windows.h>
+      #include <xinput.h>
+      int main(int argc, char **argv) { return 0; }
+Performing C SOURCE FILE Test HAVE_WINDOWS_GAMING_INPUT_H succeeded with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ec839.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  src.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_WINDOWS_GAMING_INPUT_H /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ec839.dir\Debug\\" /Fd"cmTC_ec839.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\src.c
+  cmTC_ec839.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_ec839.exe
+
+
+Source file was:
+
+      #define COBJMACROS
+      #include <windows.gaming.input.h>
+      __x_ABI_CWindows_CGaming_CInput_CIGamepadStatics2 *s2;
+      int main(int argc, char **argv) { return 0; }
+Determining if the include file tpcshrd.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_6ca59.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6ca59.dir\Debug\\" /Fd"cmTC_6ca59.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_6ca59.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_6ca59.exe
+
+
+
+Determining if the include file roapi.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_12860.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_12860.dir\Debug\\" /Fd"cmTC_12860.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_12860.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_12860.exe
+
+
+
+Determining if the include file mmdeviceapi.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_7ead2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7ead2.dir\Debug\\" /Fd"cmTC_7ead2.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_7ead2.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_7ead2.exe
+
+
+
+Determining if the include file audioclient.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_861e4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_861e4.dir\Debug\\" /Fd"cmTC_861e4.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_861e4.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_861e4.exe
+
+
+
+Determining if the include file sensorsapi.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_d61e2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d61e2.dir\Debug\\" /Fd"cmTC_d61e2.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_d61e2.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_d61e2.exe
+
+
+
+Determining if the include file shellscalingapi.h exists passed with the following output:
+Change Dir: P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/Vs22/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_55a6d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && Microsoft (R)-Build-Engine, Version 17.1.0+ae57d105c für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.31.31104 für x64
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_55a6d.dir\Debug\\" /Fd"cmTC_55a6d.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  cmTC_55a6d.vcxproj -> P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\CMakeFiles\CMakeTmp\Debug\cmTC_55a6d.exe
+
+
+

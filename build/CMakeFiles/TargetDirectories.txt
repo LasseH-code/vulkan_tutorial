@@ -1,3 +1,11 @@
 P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/Tutorial.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/INSTALL.dir
 P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/ALL_BUILD.dir
 P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/CMakeFiles/ZERO_CHECK.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/libs/SDL/CMakeFiles/SDL2main.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/libs/SDL/CMakeFiles/SDL2.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/libs/SDL/CMakeFiles/SDL2-static.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/libs/SDL/CMakeFiles/SDL2_test.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/libs/SDL/CMakeFiles/uninstall.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/libs/SDL/CMakeFiles/INSTALL.dir
+P:/Resources/4Coder/4coder/projects/vulkan_tutorial/build/libs/SDL/CMakeFiles/ALL_BUILD.dir
