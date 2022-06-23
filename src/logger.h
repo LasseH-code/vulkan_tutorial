@@ -44,29 +44,6 @@ namespace lhg
         
         static HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         
-        static void log_line(const char* file, const size_t line, const char* msg, const char* col_att, const char* norm_att)
-        {
-                std::cout << col_att << '[' << file << ':' << line << "]: " << msg << norm_att << std::endl;
-        }
-        
-        
-        static void log(const char* file, const size_t line, const char* msg, const Col col)
-        {
-                
-                char* col_att = (char*) col.att;
-                char* norm_att = (char*) normal_col.att;
-                if (!use_attributes)
-                {
-                        col_att = (char*) "";
-                        norm_att = (char*) "";
-                        SetConsoleTextAttribute(hConsole, col.col);
-                        log_line(file, line, msg, col_att, norm_att);
-                        SetConsoleTextAttribute(hConsole, normal_col.col);
-                        return;
-                }
-                log_line(file, line, msg, col_att, norm_att);
-        }
-        
         static void variadic_unpack(std::string& buf) {}
         
         template<typename T, typename... Args>
@@ -163,6 +140,29 @@ namespace lhg
         {
                 buf.append(std::to_string(arg));
                 variadic_unpack(buf, args...);
+        }
+        
+        
+        static void log_line(const char* file, const size_t line, const char* msg, const char* col_att, const char* norm_att)
+        {
+                std::cout << col_att << '[' << file << ':' << line << "]: " << msg << norm_att << std::endl;
+        }
+        
+        static void log(const char* file, const size_t line, const char* msg, const Col col)
+        {
+                
+                char* col_att = (char*) col.att;
+                char* norm_att = (char*) normal_col.att;
+                if (!use_attributes)
+                {
+                        col_att = (char*) "";
+                        norm_att = (char*) "";
+                        SetConsoleTextAttribute(hConsole, col.col);
+                        log_line(file, line, msg, col_att, norm_att);
+                        SetConsoleTextAttribute(hConsole, normal_col.col);
+                        return;
+                }
+                log_line(file, line, msg, col_att, norm_att);
         }
         
         template<typename... Args>
