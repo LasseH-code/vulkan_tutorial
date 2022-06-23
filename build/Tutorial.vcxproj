@@ -319,6 +319,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\src\main.cpp" />
     <ClCompile Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\src\logger.cpp" />
+    <ClCompile Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\src\vulkan_base\vulkan_device.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\build\ZERO_CHECK.vcxproj">

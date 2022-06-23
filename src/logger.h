@@ -35,6 +35,7 @@ namespace lhg
         };
         
         static Col normal_col = Col("\033[3;40;37m", FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        static Col info_col = Col("\033[3;40;37m", FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
         static Col debug_col = Col("\033[3;40;96m", FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
         static Col warning_col = Col("\033[3;40;33m", FOREGROUND_RED | FOREGROUND_INTENSITY);
         static Col error_col = Col("\033[3;40;31m", FOREGROUND_RED);
@@ -170,7 +171,7 @@ namespace lhg
         {
                 std::string buf;
                 variadic_unpack(buf, msg...);
-                log(file, line, buf.c_str(), normal_col);
+                log(file, line, buf.c_str(), info_col);
         }
         
         template<typename... Args>

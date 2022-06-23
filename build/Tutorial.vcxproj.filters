@@ -7,6 +7,9 @@
     <ClCompile Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\src\logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\src\vulkan_base\vulkan_device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="P:\Resources\4Coder\4coder\projects\vulkan_tutorial\CMakeLists.txt" />
