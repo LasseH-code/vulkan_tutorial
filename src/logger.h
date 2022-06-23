@@ -1,7 +1,7 @@
 /* date = June 23rd 2022 11:37 am */
 
 /*
-Heavy Mod of Pilzschafs (https://www.github.com/Pilzschaf) simple_logger.
+Heavy Mod of Pilzschaf's (https://www.github.com/Pilzschaf) simple_logger.
 Major changes:
  - support for console attributes
 - new log levels: debug, critical

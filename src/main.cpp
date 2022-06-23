@@ -35,7 +35,7 @@ int main()
         SDL_Window* window = SDL_CreateWindow("Vulkan Tutorial", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1240, 720, SDL_WINDOW_VULKAN);
         if (!window)
         {
-                lhg::LOG_CRIT("Error creating SDl window");
+                lhg::LOG_CRIT("Error creating SDL window");
                 return 1;
         }
         
