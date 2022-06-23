@@ -5,9 +5,10 @@
 
 int main()
 {
+        lhg::LOG_WARN("Initializing");
         if(SDL_Init(SDL_INIT_VIDEO) != 0)
         {
-                lhg::LOG_ERROR("Error initializing SDL: ");
+                lhg::LOG_ERROR("Error initializing SDL: ", SDL_GetError());
         }
         
         return 0;
