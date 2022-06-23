@@ -1,19 +1,20 @@
 /* date = June 23rd 2022 11:37 am */
 
+#ifndef LOGGER_H
+#define LOGGER_H
+
 #include <iostream>
 #include <string>
 #include <windows.h>
 #include <wincon.h>
-
-#ifndef LOGGER_H
-#define LOGGER_H
+#include <sstream>
 
 namespace lhg
 {
 #define LOG_INFO(msg) log_info(__FILE__, __LINE__, msg)
 #define LOG_DEBUG(msg) log_debug(__FILE__, __LINE__, msg)
 #define LOG_WARN(msg) log_warning(__FILE__, __LINE__, msg)
-#define LOG_ERROR(msg) log_error(__FILE__, __LINE__, msg)
+#define LOG_ERROR(...) log_error(__FILE__, __LINE__, __VA_ARGS__)
 #define LOG_CRIT(msg) log_critical(__FILE__, __LINE__, msg)
         
         struct Col
@@ -26,11 +27,11 @@ namespace lhg
                         : col(col), att(att){};
         };
         
-        static Col normal_col = Col("\033[om", FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-        static Col debug_col = Col("\033[om", FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-        static Col warning_col = Col("\033[om", FOREGROUND_RED);
-        static Col error_col = Col("\033[om", FOREGROUND_RED | FOREGROUND_INTENSITY);
-        static Col critical_col = Col("\033[om", FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | /*FOREGROUND_INTENSITY |*/ BACKGROUND_RED | BACKGROUND_INTENSITY);
+        static Col normal_col = Col("\033[3;40;37m", FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        static Col debug_col = Col("\033[3;40;96m", FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+        static Col warning_col = Col("\033[3;40;33m", FOREGROUND_RED);
+        static Col error_col = Col("\033[3;40;31m", FOREGROUND_RED | FOREGROUND_INTENSITY);
+        static Col critical_col = Col("\033[3;101;37m", FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | /*FOREGROUND_INTENSITY |*/ BACKGROUND_RED | BACKGROUND_INTENSITY);
         
         static bool use_attributes = false;
         
@@ -57,6 +58,105 @@ namespace lhg
                 log_line(file, line, msg, col_att, norm_att);
         }
         
+        static void variadic_unpack(std::string& buf) {}
+        
+        template<typename T, typename... Args>
+                static void variadic_unpack(std::string& buf, const T arg, const Args... args)
+        {
+                std::ostringstream oss;
+                oss << arg;
+                buf.append(oss.str());
+                
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, void* arg, const Args... args)
+        {
+                std::ostringstream oss;
+                oss << arg;
+                buf.append(oss.str());
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, char* arg, const Args... args)
+        {
+                buf.append(arg);
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, const char* arg, const Args... args)
+        {
+                buf.append(arg);
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, int arg, const Args... args)
+        {
+                buf.append(std::to_string(arg));
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, unsigned arg, const Args... args)
+        {
+                buf.append(std::to_string(arg));
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, long arg, const Args... args)
+        {
+                buf.append(std::to_string(arg));
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, unsigned long arg, const Args... args)
+        {
+                buf.append(std::to_string(arg));
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, long long arg, const Args... args)
+        {
+                buf.append(std::to_string(arg));
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, unsigned long long arg, const Args... args)
+        {
+                buf.append(std::to_string(arg));
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, float arg, const Args... args)
+        {
+                buf.append(std::to_string(arg));
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, double arg, const Args... args)
+        {
+                buf.append(std::to_string(arg));
+                variadic_unpack(buf, args...);
+        }
+        
+        template<typename... Args>
+                static void variadic_unpack(std::string& buf, long double arg, const Args... args)
+        {
+                buf.append(std::to_string(arg));
+                variadic_unpack(buf, args...);
+        }
+        
+        
         static void log_info(const char* file, const size_t line, const char* msg)
         {
                 log(file, line, msg, normal_col);
@@ -69,10 +169,15 @@ namespace lhg
         {
                 log(file, line, msg, warning_col);
         }
-        static void log_error(const char* file, const size_t line, const char* msg)
+        
+        template<typename... Args>
+                static void log_error(const char* file, const size_t line, const Args &... msg)
         {
-                log(file, line, msg, error_col);
+                std::string buf;
+                variadic_unpack(buf, msg...);
+                log(file, line, buf.c_str(), error_col);
         }
+        
         static void log_critical(const char* file, const size_t line, const char* msg)
         {
                 log(file, line, msg, critical_col);
