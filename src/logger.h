@@ -42,6 +42,8 @@ namespace lhg
         static Col critical_col = Col("\033[3;101;37m", FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | /*FOREGROUND_INTENSITY |*/ BACKGROUND_RED | BACKGROUND_INTENSITY);
         
         static bool use_attributes = false;
+        static bool verbose = true;
+        static bool show_path = true;
         
         static HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         
@@ -146,12 +148,12 @@ namespace lhg
         
         static void log_line(const char* file, const size_t line, const char* msg, const char* col_att, const char* norm_att)
         {
-                std::cout << col_att << '[' << file << ':' << line << "]: " << msg << norm_att << std::endl;
+                if (show_path) std::cout << col_att << '[' << file << ':' << line << "]: ";
+                std::cout << msg << norm_att << std::endl;
         }
         
         static void log(const char* file, const size_t line, const char* msg, const Col col)
         {
-                
                 char* col_att = (char*) col.att;
                 char* norm_att = (char*) normal_col.att;
                 if (!use_attributes)
@@ -169,6 +171,7 @@ namespace lhg
         template<typename... Args>
                 static void log_info(const char* file, const size_t line, const Args &... msg)
         {
+                if (!verbose) return;
                 std::string buf;
                 variadic_unpack(buf, msg...);
                 log(file, line, buf.c_str(), info_col);
