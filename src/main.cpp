@@ -2,6 +2,7 @@
 #include "logger.h"
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
+#include <SDL_vulkan.h>
 #include <chrono>
 #include "vulkan_base/vulkan_base.h"
 
@@ -39,7 +40,13 @@ int main()
                 return 1;
         }
         
-        lh_vulkan::VulkanBase* vulkan_base = new lh_vulkan::VulkanBase();
+        uint32_t instanceExtensionCount;
+        SDL_Vulkan_GetInstanceExtensions(window, &instanceExtensionCount, 0);
+        const char** enabledInstanceExtensions = new const char* [instanceExtensionCount];
+        SDL_Vulkan_GetInstanceExtensions(window, &instanceExtensionCount, enabledInstanceExtensions);
+        
+        
+        lh_vulkan::VulkanBase* vulkan_base = new lh_vulkan::VulkanBase(instanceExtensionCount, enabledInstanceExtensions);
         
         end = std::chrono::system_clock::now(); 
         elapsed_seconds = end-start;
@@ -53,6 +60,7 @@ int main()
         
         
         start = std::chrono::system_clock::now(); 
+        delete vulkan_base;
         lhg::LOG_WARN("Destroying window...");
         SDL_DestroyWindow(window);
         SDL_Quit();

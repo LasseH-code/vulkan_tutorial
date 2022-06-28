@@ -1,4 +1,4 @@
-#define SDL_REVISION "https://github.com/LasseH-code/vulkan_tutorial.git@6e97f4cf876c2e0367b654663a3bb81b83c9645a"
+#define SDL_REVISION "https://github.com/LasseH-code/vulkan_tutorial.git@50353df3b47b8f5fef6536cd5e3dc69f70f7b5b9"
 #define SDL_REVISION_NUMBER 0
 
 #ifndef SDL_REVISION

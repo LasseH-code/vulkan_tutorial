@@ -23,6 +23,7 @@ namespace lhg
 #define LOG_WARN(...) log_warning(__FILE__, __LINE__, __VA_ARGS__)
 #define LOG_ERROR(...) log_error(__FILE__, __LINE__, __VA_ARGS__)
 #define LOG_CRIT(...) log_critical(__FILE__, __LINE__, __VA_ARGS__)
+#define LOG_EMPTY() log_empty()
         
         struct Col
         {
@@ -39,7 +40,7 @@ namespace lhg
         static Col debug_col = Col("\033[3;40;96m", FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
         static Col warning_col = Col("\033[3;40;33m", FOREGROUND_RED | FOREGROUND_INTENSITY);
         static Col error_col = Col("\033[3;40;31m", FOREGROUND_RED);
-        static Col critical_col = Col("\033[3;101;37m", FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | /*FOREGROUND_INTENSITY |*/ BACKGROUND_RED | BACKGROUND_INTENSITY);
+        static Col critical_col = Col("\033[3;101;37m", FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | /*FOREGROUND_INTENSITY |*/ BACKGROUND_RED /*| BACKGROUND_INTENSITY*/);
         
         static bool use_attributes = false;
         static bool verbose = true;
@@ -166,6 +167,11 @@ namespace lhg
                         return;
                 }
                 log_line(file, line, msg, col_att, norm_att);
+        }
+        
+        static void log_empty()
+        {
+                std::cout<<std::endl;
         }
         
         template<typename... Args>
