@@ -8,7 +8,7 @@
 
 bool handle_message()
 {
-        SDL_Event event; 
+        SDL_Event event;
         while(SDL_PollEvent(&event))
         {
                 switch (event.type)
@@ -22,6 +22,8 @@ bool handle_message()
 
 int main()
 {
+        //lhg::LOG_CRIT("Test");
+        
         std::chrono::time_point<std::chrono::system_clock> start, end;
         std::chrono::duration<double> elapsed_seconds;
         
@@ -46,7 +48,7 @@ int main()
         SDL_Vulkan_GetInstanceExtensions(window, &instanceExtensionCount, enabledInstanceExtensions);
         
         
-        lh_vulkan::VulkanBase* vulkan_base = new lh_vulkan::VulkanBase(instanceExtensionCount, enabledInstanceExtensions);
+        lh_vulkan::VulkanBase* vulkan_base = new lh_vulkan::VulkanBase(instanceExtensionCount, enabledInstanceExtensions, 0, 0, &SDL_Vulkan_CreateSurface);
         
         end = std::chrono::system_clock::now(); 
         elapsed_seconds = end-start;

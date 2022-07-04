@@ -85,16 +85,68 @@ namespace lh_vulkan
                 }
                 context->physicalDevice = physicalDevices[0];
                 VK(vkGetPhysicalDeviceProperties(context->physicalDevice, &context->physicalDeviceProperties));
-                lhg::LOG_INFO("Selected GPU: ", context->physicalDeviceProperties.deviceName);
+                lhg::LOG_INFO_IV("Selected GPU: ", context->physicalDeviceProperties.deviceName);
                 
                 delete[] physicalDevices;
                 return true;
         }
         
-        
-        VulkanBase::VulkanBase(uint32_t instanceExtensionCount, const char** instanceExtensions)
+        bool VulkanBase::createLogicalDevice(uint32_t deviceExtensionCount, const char** deviceExtensions)
         {
-                createVulkanInstance(instanceExtensionCount, instanceExtensions);
+                // Queues
+                uint32_t numQueueFamilies = 0; 
+                VK(vkGetPhysicalDeviceQueueFamilyProperties(context->physicalDevice, &numQueueFamilies, 0));
+                VkQueueFamilyProperties* queueFamilies = new VkQueueFamilyProperties[numQueueFamilies];
+                VK(vkGetPhysicalDeviceQueueFamilyProperties(context->physicalDevice, &numQueueFamilies, queueFamilies));
+                
+                uint32_t graphicsQueueIndex = 0;
+                for (uint32_t i = 0; i < numQueueFamilies; i++)
+                {
+                        VkQueueFamilyProperties queueFamily = queueFamilies[i];
+                        if (queueFamily.queueCount > 0)
+                        {
+                                if (queueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT)
+                                {
+                                        graphicsQueueIndex = i;
+                                        break;
+                                }
+                        }
+                }
+                
+                float priorities[] = { 1.0f };
+                VkDeviceQueueCreateInfo queueCreateInfo = { VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO };
+                queueCreateInfo.queueFamilyIndex = graphicsQueueIndex;
+                queueCreateInfo.queueCount = 1;
+                queueCreateInfo.pQueuePriorities = priorities;
+                
+                VkPhysicalDeviceFeatures enabledFeatures = {};
+                
+                VkDeviceCreateInfo createInfo = { VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO };
+                createInfo.queueCreateInfoCount = 1;
+                createInfo.pQueueCreateInfos = &queueCreateInfo;
+                createInfo.enabledExtensionCount = deviceExtensionCount;
+                createInfo.ppEnabledExtensionNames = deviceExtensions;
+                createInfo.pEnabledFeatures = &enabledFeatures;
+                
+                
+                delete[] queueFamilies;
+                if (vkCreateDevice(context->physicalDevice, &createInfo, 0, &context->logicalDevice))
+                {
+                        lhg::LOG_ERROR("Failed to create logical device");
+                        return false;
+                }
+                
+                // Aquire queues
+                context->graphicsQueue.familyIndex = graphicsQueueIndex;
+                VK(vkGetDeviceQueue(context->logicalDevice, graphicsQueueIndex, 0, &context->graphicsQueue.queue));
+                
+                return true;
+        }
+        
+        
+        VulkanBase::VulkanBase(uint32_t instanceExtensionCount, const char** instanceExtensions, uint32_t deviceExtensionCount, const char** deviceExtensions, void* createSurface)
+        {
+                createVulkanInstance(instanceExtensionCount, instanceExtensions, deviceExtensionCount, deviceExtensions, createSurface);
         }
         
         VulkanBase::~VulkanBase()
@@ -102,7 +154,7 @@ namespace lh_vulkan
                 destroyVulkanInstance();
         }
         
-        int VulkanBase::createVulkanInstance(uint32_t instanceExtensionCount, const char** instanceExtensions)
+        int VulkanBase::createVulkanInstance(uint32_t instanceExtensionCount, const char** instanceExtensions, uint32_t deviceExtensionCount, const char** deviceExtensions, void* createSurface)
         {
                 context = new VulkanContext;
                 
@@ -115,14 +167,25 @@ namespace lh_vulkan
                 {
                         return 2;
                 }
+                
+                if (!createLogicalDevice(deviceExtensionCount, deviceExtensions))
+                {
+                        return 3;
+                }
 #ifdef VULKAN_INFO_OUTPUT
                 lhg::LOG_INFO("Vulkan instance created successfully");
 #endif // VULKAN_INFO_OUTPUT
+                
+                //createSurface();
                 return 0;
         }
         
         void VulkanBase::destroyVulkanInstance()
         {
+                VKA(vkDeviceWaitIdle(context->logicalDevice));
+                VK(vkDestroyDevice(context->logicalDevice, 0));
+                
+                VK(vkDestroyInstance(context->instance, 0));
                 delete context;
 #ifdef VULKAN_INFO_OUTPUT
                 lhg::LOG_WARN("Vulkan instance destroyed");

@@ -21,26 +21,43 @@
 
 namespace lh_vulkan
 {
+        struct VulkanQueue
+        {
+                VkQueue queue;
+                uint32_t familyIndex;
+        };
         
-        struct VulkanContext {
+        struct VulkanSwapchain {
+                VkSwapchainKHR swapchain;
+                VkSurfaceKHR surface;
+        };
+        
+        struct VulkanContext 
+        {
                 VkInstance instance;
                 VkPhysicalDevice physicalDevice;
                 VkPhysicalDeviceProperties physicalDeviceProperties;
+                VkDevice logicalDevice;
+                VulkanQueue graphicsQueue;
         };
         
         class VulkanBase
         {
-                private: 
+                public:
                 VulkanContext* context;
+                VulkanSwapchain* swapchain;
                 
+                private: 
                 bool initVulkanInstance(uint32_t instanceExtensionCount, const char** instanceExtensions);
                 bool selectPhysicalDevice();
+                bool createLogicalDevice(uint32_t deviceExtensionCount, const char** deviceExtensions);
+                bool createSwapchain(VkSurfaceKHR surface, VulkanSwapchain* swapchain);
                 
                 public:
-                VulkanBase(uint32_t instanceExtensionCount, const char** instanceExtensions);
+                VulkanBase(uint32_t instanceExtensionCount, const char** instanceExtensions, uint32_t deviceExtensionCount, const char** deviceExtensions, void* createSurface);
                 ~VulkanBase();
                 
-                int createVulkanInstance(uint32_t instanceExtensionCount, const char** instanceExtensions);
+                int createVulkanInstance(uint32_t instanceExtensionCount, const char** instanceExtensions, uint32_t deviceExtensionCount, const char** deviceExtensions, void* createSurface);
                 void destroyVulkanInstance();
         };
 }
