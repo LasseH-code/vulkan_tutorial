@@ -7,7 +7,9 @@ set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
 
-set(SOURCE_FILES src/main.cpp src/logger.cpp src/vulkan_base/vulkan_device.cpp)
+set(COMPILE_DEFINITIONS VULKAN_INFO_OUTPUT LHG_VERBOSE)
+
+set(SOURCE_FILES src/main.cpp src/logger.cpp src/vulkan_base/vulkan_device.cpp src/vulkan_base/vulkan_swapchain.cpp)
 
 # Find SDL2
 add_subdirectory(libs/SDL)
@@ -16,6 +18,7 @@ add_subdirectory(libs/SDL)
 find_package(Vulkan REQUIRED)
 
 # Tutorial executable
+add_compile_definitions(${COMPILE_DEFINITIONS})
 add_executable(Tutorial ${SOURCE_FILES})
 target_include_directories(Tutorial PUBLIC libs/SDL/include)
 target_link_libraries(Tutorial PUBLIC SDL2-static)
