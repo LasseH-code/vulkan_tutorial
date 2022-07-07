@@ -48,7 +48,12 @@ int main()
         SDL_Vulkan_GetInstanceExtensions(window, &instanceExtensionCount, enabledInstanceExtensions);
         
         
-        lh_vulkan::VulkanBase* vulkan_base = new lh_vulkan::VulkanBase(instanceExtensionCount, enabledInstanceExtensions, 0, 0, &SDL_Vulkan_CreateSurface);
+        int retV; 
+        
+        lh_vulkan::VulkanBaseCreationStruct vulkanBaseCS = {lh_vulkan::GENERATE_VULKAN_CONTEXT | lh_vulkan::CREATE_SURFACE_KHR_SDL, &retV, instanceExtensionCount, enabledInstanceExtensions, 0, 0, 0};
+        
+        
+        lh_vulkan::VulkanBase* vulkan_base = new lh_vulkan::VulkanBase(&vulkanBaseCS);
         
         end = std::chrono::system_clock::now(); 
         elapsed_seconds = end-start;

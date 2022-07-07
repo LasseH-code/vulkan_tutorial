@@ -144,9 +144,9 @@ namespace lh_vulkan
         }
         
         
-        VulkanBase::VulkanBase(uint32_t instanceExtensionCount, const char** instanceExtensions, uint32_t deviceExtensionCount, const char** deviceExtensions, void* createSurface)
+        VulkanBase::VulkanBase(VulkanBaseCreationStruct* creationStruct)
         {
-                createVulkanInstance(instanceExtensionCount, instanceExtensions, deviceExtensionCount, deviceExtensions, createSurface);
+                *creationStruct->returnVal = createVulkanInstance(creationStruct);
         }
         
         VulkanBase::~VulkanBase()
@@ -154,26 +154,27 @@ namespace lh_vulkan
                 destroyVulkanInstance();
         }
         
-        int VulkanBase::createVulkanInstance(uint32_t instanceExtensionCount, const char** instanceExtensions, uint32_t deviceExtensionCount, const char** deviceExtensions, void* createSurface)
+        int VulkanBase::createVulkanInstance(VulkanBaseCreationStruct* creationStruct)
         {
                 context = new VulkanContext;
                 
-                if (!initVulkanInstance(instanceExtensionCount, instanceExtensions))
+                if (IS_FLAG_SET(creationStruct->creationFlags, CREATE_VULKAN_INSTANCE) && !initVulkanInstance(creationStruct->instanceExtensionCount, creationStruct->instanceExtensions))
                 {
                         return 1;
                 }
                 
-                if (!selectPhysicalDevice())
+                if (IS_FLAG_SET(creationStruct->creationFlags, FIND_PHYSICAL_DEVICE) && !selectPhysicalDevice())
                 {
                         return 2;
                 }
                 
-                if (!createLogicalDevice(deviceExtensionCount, deviceExtensions))
+                if (IS_FLAG_SET(creationStruct->creationFlags, GENERATE_LOGICAL_DEVICE) && !createLogicalDevice(creationStruct->deviceExtensionCount, creationStruct->deviceExtensions))
                 {
                         return 3;
                 }
+                
 #ifdef VULKAN_INFO_OUTPUT
-                lhg::LOG_INFO("Vulkan instance created successfully");
+                lhg::LOG_INFO("Vulkan context created successfully");
 #endif // VULKAN_INFO_OUTPUT
                 
                 //createSurface();
@@ -182,11 +183,16 @@ namespace lh_vulkan
         
         void VulkanBase::destroyVulkanInstance()
         {
+#ifndef VULKAN_HEADLESS
+                deleteSwapchain();
+#endif // VULKAN_HEADLESS
+                
                 VKA(vkDeviceWaitIdle(context->logicalDevice));
                 VK(vkDestroyDevice(context->logicalDevice, 0));
-                
                 VK(vkDestroyInstance(context->instance, 0));
                 delete context;
+                context = 0;
+                
 #ifdef VULKAN_INFO_OUTPUT
                 lhg::LOG_WARN("Vulkan instance destroyed");
 #endif // VULKAN_INFO_OUTPUT
