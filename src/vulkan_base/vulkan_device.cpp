@@ -52,7 +52,7 @@ namespace lh_vulkan
         {
             lhg::LOG_INFO(instanceExtensions[i]);
         }
-        lhg::LOG_INFO("--------------------------");
+        //lhg::LOG_INFO("--------------------------");
 #endif // VULKAN_INFO_OUTPUT
         
 #ifdef VULKAN_INFO_OUTPUT
@@ -69,7 +69,7 @@ namespace lh_vulkan
             lhg::LOG_ERROR("Error creating vulkan instance");
             return false;
         }
-        lhg::LOG_DEBUG("instance: ", context->instance);
+        //lhg::LOG_DEBUG("instance: ", context->instance);
         
         return true;
     }
@@ -168,6 +168,7 @@ namespace lh_vulkan
     int VulkanBase::createVulkanInstance(VulkanBaseCreationStruct* creationStruct)
     {
         context = new VulkanContext;
+        swapchain = new VulkanSwapchain;
         
         if (IS_FLAG_SET(creationStruct->creationFlags, CREATE_VULKAN_INSTANCE) && !initVulkanInstance(creationStruct->instanceExtensionCount, creationStruct->instanceExtensions))
         {

@@ -52,8 +52,14 @@ int main()
     
     lh_vulkan::VulkanBaseSDLWindowCreationStruct windowCS = {"Vulkan Tutorial", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1240, 720, SDL_WINDOW_VULKAN};
     
-    lh_vulkan::VulkanBaseCreationStruct vulkanBaseCS = {lh_vulkan::GENERATE_VULKAN_CONTEXT | lh_vulkan::SETUP_VIA_SDL, VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT,  &retV, 0,0,/*instanceExtensionCount, enabledInstanceExtensions,*/ 0, 0, &windowCS};
-    
+    const char* enabledDeviceExtensions[] {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+    lh_vulkan::VulkanBaseCreationStruct vulkanBaseCS = {};
+    vulkanBaseCS.creationFlags = lh_vulkan::GENERATE_VULKAN_CONTEXT | lh_vulkan::SETUP_VIA_SDL;
+    vulkanBaseCS.usageFlags = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
+    vulkanBaseCS.returnVal = &retV;
+    vulkanBaseCS.deviceExtensionCount = ARRAY_COUNT(enabledDeviceExtensions);
+    vulkanBaseCS.deviceExtensions = enabledDeviceExtensions;
+    vulkanBaseCS.sdlWindowCS = &windowCS;
     
     lh_vulkan::VulkanBase* vulkan_base = new lh_vulkan::VulkanBase(&vulkanBaseCS, window);
     

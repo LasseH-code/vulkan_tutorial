@@ -59,13 +59,18 @@ namespace lh_vulkan
             lhg::LOG_CRIT("Error creating SDL window: ", SDL_GetError());
             return 1;
         }
+        //lhg::LOG_DEBUG("window: ", *window);
         return(*window);
     }
     
     bool VulkanBase::createSurfaceSDL(SDL_Window** window)
     {
-        lhg::LOG_DEBUG(1);
-        return (SDL_Vulkan_CreateSurface(*window, context->instance, &swapchain->surface) == SDL_TRUE);
+        if (!SDL_Vulkan_CreateSurface(*window, context->instance, &swapchain->surface))
+        {
+            lhg::LOG_ERROR("Error creating Vulkan Surface via SDL");
+            return false;
+        }
+        return true;
     }
     
     bool VulkanBase::querySDLInstanceExtensions(VulkanBaseCreationStruct* cs, SDL_Window** window)
