@@ -7,9 +7,9 @@ set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
 
-set(COMPILE_DEFINITIONS VULKAN_INFO_OUTPUT LHG_VERBOSE VULKAN_SUPPORT_SDL)
+set(COMPILE_DEFINITIONS EZV_INFO_OUTPUT LHG_VERBOSE EZV_SUPPORT_SDL)
 
-set(SOURCE_FILES src/main.cpp src/logger.cpp src/vulkan_base/vulkan_device.cpp src/vulkan_base/vulkan_swapchain.cpp src/vulkan_base/vulkan_SDL_support.cpp)
+set(SOURCE_FILES src/main.cpp src/logger.cpp src/ezv_base/ezv_device.cpp src/ezv_base/ezv_swapchain.cpp src/ezv_base/ezv_SDL_support.cpp)
 
 # Find SDL2
 add_subdirectory(libs/SDL)
