@@ -9,7 +9,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
 
 set(COMPILE_DEFINITIONS EZV_INFO_OUTPUT LHG_VERBOSE EZV_SUPPORT_SDL)
 
-set(SOURCE_FILES src/main.cpp src/logger.cpp src/ezv_base/ezv_device.cpp src/ezv_base/ezv_swapchain.cpp src/ezv_base/ezv_SDL_support.cpp)
+set(LoggerFiles src/logger.cpp)
+
+set(EzVFiles src/ezv_base/ezv_device.cpp src/ezv_base/ezv_swapchain.cpp src/ezv_base/ezv_SDL_support.cpp)
+list(APPEND EzVFiles ${LoggerFiles})
+
+set(SOURCE_FILES src/main.cpp)
+# list(APPEND SOURCE_FILES ${EzVFiles})
+list(APPEND SOURCE_FILES ${LoggerFiles})
 
 # Find SDL2
 add_subdirectory(libs/SDL)
@@ -17,10 +24,19 @@ add_subdirectory(libs/SDL)
 # Find Vulkan
 find_package(Vulkan REQUIRED)
 
-# Tutorial executable
 add_compile_definitions(${COMPILE_DEFINITIONS})
+
+# EzV Library
+add_library(EzV STATIC ${EzVFiles})
+target_include_directories(EzV PUBLIC libs/SDL/include)
+target_link_libraries(EzV PUBLIC SDL2-static)
+target_include_directories(EzV PUBLIC ${Vulkan_INCLUDE_DIRS})
+target_link_libraries(EzV PUBLIC ${Vulkan_LIBRARIES})
+
+# Tutorial executable
 add_executable(Tutorial ${SOURCE_FILES})
 target_include_directories(Tutorial PUBLIC libs/SDL/include)
+target_link_libraries(Tutorial PUBLIC EzV)
 target_link_libraries(Tutorial PUBLIC SDL2-static)
 target_include_directories(Tutorial PUBLIC ${Vulkan_INCLUDE_DIRS})
 target_link_libraries(Tutorial PUBLIC ${Vulkan_LIBRARIES})

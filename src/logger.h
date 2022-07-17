@@ -19,7 +19,7 @@ Major changes:
 namespace lhg
 {
 #define LOG_INFO(...) log_info(__FILE__, __LINE__, false, __VA_ARGS__)
-#define LOG_INFO_IV(...) log_info(__FILE__, __LINE__, true, __VA_ARGS__)
+#define LOG_INFO_IV(...) log_info(__FILE__, __LINE__, true, __VA_ARGS__) // IV stands for Ignore Verbose
 #define LOG_DEBUG(...) log_debug(__FILE__, __LINE__, __VA_ARGS__)
 #define LOG_WARN(...) log_warning(__FILE__, __LINE__, __VA_ARGS__)
 #define LOG_ERROR(...) log_error(__FILE__, __LINE__, __VA_ARGS__)

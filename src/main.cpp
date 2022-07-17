@@ -1,3 +1,4 @@
+#include "memory/memory.h"
 #include <stdio.h>
 #include "logger.h"
 #define SDL_MAIN_HANDLED
@@ -22,6 +23,14 @@ bool handle_message()
 
 int main()
 {
+    lhg::LOG_INFO("info test");
+    lhg::LOG_DEBUG("debug test");
+    lhg::LOG_WARN("warning test");
+    lhg::LOG_ERROR("error test");
+    lhg::LOG_CRIT("critical test");
+    
+    //printMemoryUsage();
+    
     std::chrono::time_point<std::chrono::system_clock> start, end;
     std::chrono::duration<double> elapsed_seconds;
     
@@ -49,6 +58,7 @@ int main()
     elapsed_seconds = end-start;
     lhg::LOG_WARN("Initialization successful - elapsed time: ", elapsed_seconds.count(), 's');
     
+    //printMemoryUsage();
     
     while (handle_message())
     {
@@ -64,6 +74,8 @@ int main()
     end = std::chrono::system_clock::now(); 
     elapsed_seconds = end-start;
     lhg::LOG_WARN("Destruction successful - elapsed time: ", elapsed_seconds.count(), 's');
+    
+    //printMemoryUsage();
     
     return 0;
 }

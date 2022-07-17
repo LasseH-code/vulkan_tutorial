@@ -4,6 +4,7 @@
 #define EZV_H
 
 #include "../logger.h"
+//i#include "../memory/memory.h"
 #include <vulkan/vulkan.h>
 #include <cassert>
 #include <vector>
@@ -28,7 +29,7 @@
 
 namespace ezv
 {
-    static const DWORD CREATE_VULKAN_INSTANCE =        0b1<<0; // Replace everywhere possible with 0b1<<x
+    static const DWORD CREATE_VULKAN_INSTANCE =        0b1<<0;
     static const DWORD FIND_PHYSICAL_DEVICE =          0b1<<1;
     static const DWORD GENERATE_LOGICAL_DEVICE =       0b1<<2;
     static const DWORD SAVE_GRAPHICS_QUEUE =           0b1<<3; 
