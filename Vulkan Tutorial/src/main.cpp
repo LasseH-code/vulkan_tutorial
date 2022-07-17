@@ -24,11 +24,11 @@ bool handle_message()
 
 int main()
 {
-    //lhg::LOG_INFO("info test");
-    //lhg::LOG_DEBUG("debug test");
-    //lhg::LOG_WARN("warning test");
-    //lhg::LOG_ERROR("error test");
-    //lhg::LOG_CRIT("critical test");
+    //LOG_INFO("info test");
+    //LOG_DEBUG("debug test");
+    //LOG_WARN("warning test");
+    //LOG_ERROR("error test");
+    //LOG_CRIT("critical test");
     
     //printMemoryUsage();
     
@@ -36,7 +36,7 @@ int main()
     std::chrono::duration<double> elapsed_seconds;
     
     start = std::chrono::system_clock::now(); 
-    lhg::LOG_WARN("Initializing...");
+    LOG_WARN("Initializing...");
     
     SDL_Window* window = 0;
     
@@ -57,7 +57,7 @@ int main()
     
     end = std::chrono::system_clock::now(); 
     elapsed_seconds = end-start;
-    lhg::LOG_WARN("Initialization successful - elapsed time: ", elapsed_seconds.count(), 's');
+    LOG_WARN("Initialization successful - elapsed time: ", elapsed_seconds.count(), 's');
     
     //printMemoryUsage();
     
@@ -69,12 +69,12 @@ int main()
     
     start = std::chrono::system_clock::now(); 
     delete ezv;
-    lhg::LOG_WARN("Destroying window...");
+    LOG_WARN("Destroying window...");
     SDL_DestroyWindow(window);
     SDL_Quit();
     end = std::chrono::system_clock::now(); 
     elapsed_seconds = end-start;
-    lhg::LOG_WARN("Destruction successful - elapsed time: ", elapsed_seconds.count(), 's');
+    LOG_WARN("Destruction successful - elapsed time: ", elapsed_seconds.count(), 's');
     
     //printMemoryUsage();
     
