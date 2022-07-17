@@ -46,12 +46,12 @@ int main()
     
     const char* enabledDeviceExtensions[] {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
     ezv::EzVCreateInfo ezVCI = {};
-    ezVCI.creationFlags = ezv::GENERATE_VULKAN_CONTEXT | ezv::SETUP_VIA_SDL;
-    ezVCI.usageFlags = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
-    ezVCI.returnVal = &retV;
-    ezVCI.deviceExtensionCount = ARRAY_COUNT(enabledDeviceExtensions);
-    ezVCI.deviceExtensions = enabledDeviceExtensions;
-    ezVCI.sdlWindowCS = &windowCI;
+    ezVCI.m_creationFlags = ezv::GENERATE_VULKAN_CONTEXT | ezv::SETUP_VIA_SDL;
+    ezVCI.m_usageFlags = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
+    ezVCI.p_returnVal = &retV;
+    ezVCI.m_deviceExtensionCount = ARRAY_COUNT(enabledDeviceExtensions);
+    ezVCI.p_deviceExtensions = enabledDeviceExtensions;
+    ezVCI.p_sdlWindowCS = &windowCI;
     
     ezv::EzV* ezv = new ezv::EzV(&ezVCI, window);
     
