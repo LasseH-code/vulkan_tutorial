@@ -1,10 +1,11 @@
 #include "memory/memory.h"
-#include <stdio.h>
-#include "logger.h"
+#include "pch.h"
+//#include <stdio.h>
+//#include "logger.h"
 #define SDL_MAIN_HANDLED
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_vulkan.h>
-#include <chrono>
+//#include <chrono>
 #include "ezv_base.h"
 
 bool handle_message()
